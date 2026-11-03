@@ -1,0 +1,5 @@
+.tag-selector { display: flex; flex-direction: column; gap: 0.75rem; }
+.tag-selector-selected, .tag-selector-options { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+.tag-selector-selected li { display: flex; align-items: center; gap: 0.5rem; padding-left: 0.5rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.tag-selector-options { max-height: 9rem; overflow-y: auto; }
+.tag-selector p { color: var(--text-muted); font-size: 0.875rem; }

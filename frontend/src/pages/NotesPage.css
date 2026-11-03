@@ -1,0 +1,68 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  min-height: 100vh;
+}
+
+.notes-header, .notes-filters { width: 100%; max-width: 360px; }
+.notes-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.notes-header h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.04em; }
+.notes-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.notes-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.notes-filter-field { display: flex; align-items: center; gap: 0.65rem; min-width: 0; max-width: 100%; }
+.notes-filter-field label { color: var(--text-muted); font-size: 0.875rem; }
+.notes-filter-field select { min-width: 7rem; max-width: min(100%, 20rem); }
+
+.notes-container select,
+.notes-container button {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.notes-container button { cursor: pointer; }
+.notes-container button:disabled { cursor: not-allowed; opacity: 0.6; }
+.notes-container button:hover:not(:disabled) { border-color: var(--accent); }
+.notes-container :is(button, select):focus-visible { outline: 2px solid var(--border-focus); outline-offset: 3px; }
+.notes-actions .notes-add { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); font-weight: 600; }
+.notes-actions .notes-add:hover { background: var(--accent-hover); }
+.notes-actions .notes-add span { font-size: 1.1rem; margin-right: 0.25rem; }
+.notes-message { color: var(--text-muted); text-align: center; }
+.notes-error { color: var(--danger); text-align: center; }
+.notes-error button { margin-top: 0.75rem; }
+
+/* Match the header width to the card grid at each column count. */
+@media (min-width: 680px) {
+  .notes-header, .notes-filters { max-width: 740px; }
+}
+@media (min-width: 1020px) {
+  .notes-header, .notes-filters { max-width: 1120px; }
+}
+@media (min-width: 1320px) {
+  .notes-header, .notes-filters { max-width: 1500px; }
+}
+@media (max-width: 679px) {
+  .notes-actions { width: 100%; }
+  .notes-actions button { flex: 1; }
+}
+@media (max-width: 479px) {
+  .notes-container { padding: 1.5rem 1rem; }
+  .notes-filters { gap: 0.75rem; }
+  .notes-filter-field { flex: 1 1 100%; }
+  .notes-filter-field label { width: 2.5rem; flex-shrink: 0; }
+  .notes-filter-field select { flex: 1; min-width: 0; }
+}

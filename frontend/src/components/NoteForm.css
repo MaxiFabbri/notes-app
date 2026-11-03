@@ -1,0 +1,32 @@
+.note-dialog {
+  width: min(92vw, 480px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+}
+
+.note-dialog::backdrop { background: rgb(0 0 0 / 70%); }
+.note-form h2 { margin-bottom: 1.25rem; }
+.note-form fieldset { display: flex; flex-direction: column; gap: 0.75rem; border: 0; min-width: 0; }
+.note-form input[type="text"],
+.note-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+}
+.note-form textarea { resize: vertical; min-height: 8rem; }
+.note-form :is(input, textarea):focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
+.note-form-checkbox { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+.note-form-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem; }
+.note-form-actions button[type="submit"] { background: var(--success); color: var(--bg-primary); }
+.note-form-error { color: var(--danger); overflow-wrap: anywhere; }

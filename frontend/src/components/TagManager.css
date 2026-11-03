@@ -1,0 +1,21 @@
+.tag-manager {
+  width: min(92vw, 560px);
+  max-height: 85vh;
+  margin: auto;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+}
+.tag-manager::backdrop { background: rgb(0 0 0 / 70%); }
+.tag-manager-help { color: var(--text-muted); margin: 0.75rem 0 1.25rem; }
+.tag-manager-list { list-style: none; }
+.tag-manager-list li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.tag-manager-details { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
+.tag-manager-details span { color: var(--text-muted); font-size: 0.875rem; }
+.tag-manager .tag-manager-delete { color: var(--danger); }
+.tag-manager-error { color: var(--danger); margin: 0.75rem 0; }
+.tag-manager-actions { display: flex; justify-content: flex-end; margin-top: 1.25rem; }

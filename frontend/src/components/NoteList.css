@@ -1,0 +1,21 @@
+.notes-list {
+  display: grid;
+  grid-template-columns: minmax(0, 360px);
+  justify-content: center;
+  align-items: start;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1500px;
+}
+
+@media (min-width: 680px) {
+  .notes-list { grid-template-columns: repeat(2, minmax(0, 360px)); }
+}
+
+@media (min-width: 1020px) {
+  .notes-list { grid-template-columns: repeat(3, minmax(0, 360px)); }
+}
+
+@media (min-width: 1320px) {
+  .notes-list { grid-template-columns: repeat(4, minmax(0, 360px)); }
+}
